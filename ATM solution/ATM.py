@@ -1,5 +1,3 @@
-money = 500
-
 def withdraw(money, request):
     print "Current balance = " + str (money)
     
@@ -35,6 +33,7 @@ def withdraw(money, request):
 
     return money - request
 
+money = 500
 
 money = withdraw(money, 376) 
 money = withdraw(money, 30)
