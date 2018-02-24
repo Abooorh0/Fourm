@@ -1,6 +1,7 @@
 class ATM:
 
     def __init__(self, balance, bank_name):
+        self.withdrawals_list = []
         self.balance = balance
         self.bank_name = bank_name
 
@@ -15,6 +16,7 @@ class ATM:
             print "Please inter the number?"
 
         else:
+            self.withdrawals_list.append(request)
             self.balance -= request
 
             while request > 0:
@@ -40,7 +42,10 @@ class ATM:
                     print "Give 1"
 
         return self.balance
-        
+
+    def show_withdrawals(self):
+        for withdrawal in self.withdrawals_list:
+            print(withdrawal)
 
 balance1 = 500
 balance2 = 1000
