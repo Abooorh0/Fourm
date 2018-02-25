@@ -18,7 +18,9 @@ class ATM:
         else:
             self.withdrawals_list.append(request)
             self.balance -= request
+            ATM.process_request(self, request)
 
+    def process_request(self, request):
             while request > 0:
 
                 if request >= 100:
@@ -41,7 +43,7 @@ class ATM:
                     request -= 1
                     print "Give 1"
 
-        return self.balance
+            return self.balance
 
     def show_withdrawals(self):
         for withdrawal in self.withdrawals_list:
